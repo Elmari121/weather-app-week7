@@ -1,50 +1,129 @@
-<!DOCTYPE html>
+<
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <title>weather app</title>
+    <title>Weather app</title>
   </head>
   <body>
     <div class="weather-app">
       <header>
         <form class="search-form" id="search-form">
-          <div class="search-form-container">
-            <input
-              type="search"
-              placeholder="Enter a city.."
-              required
-              id="search-form-input"
-              class="search-form-input"
-            />
-            <input type="submit" value="Search" class="search-form-button" />
-          </div>
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required=""
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
-
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="weather-app-city" id="city"></h1>
+            <h1 class="weather-app-city" id="city">Paris</h1>
             <p class="weather-app-details">
-              <span id="time"></span>,
-              <span id="description"></span>
+              <span id="time">Sunday 14:05</span>,
+              <span id="description">scattered clouds</span>
               <br />
-              Humidity: <strong id="humidity"></strong>, Wind:
-              <strong id="wind-speed"></strong>
+              Humidity: <strong id="humidity">63%</strong>, Wind:
+              <strong id="wind-speed">5.14km/h</strong>
             </p>
           </div>
           <div class="weather-app-temperature-container">
-            <div id="icon"></div>
-            <div class="weather-app-temperature" id="temperature"></div>
+            <div id="icon">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+                class="weather-app-icon"
+              />
+            </div>
+            <div class="weather-app-temperature" id="temperature">8</div>
             <div class="weather-app-unit">°C</div>
+          </div>
+        </div>
+        <div class="weather-forecast" id="forecast">
+          <div class="weather-forecast-day">
+            <div class="weather-forecast-date">Sun</div>
+
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+              class="weather-forecast-icon"
+            />
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>10º</strong>
+              </div>
+              <div class="weather-forecast-temperature">2º</div>
+            </div>
+          </div>
+
+          <div class="weather-forecast-day">
+            <div class="weather-forecast-date">Mon</div>
+
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              class="weather-forecast-icon"
+            />
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>12º</strong>
+              </div>
+              <div class="weather-forecast-temperature">3º</div>
+            </div>
+          </div>
+
+          <div class="weather-forecast-day">
+            <div class="weather-forecast-date">Tue</div>
+
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              class="weather-forecast-icon"
+            />
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>14º</strong>
+              </div>
+              <div class="weather-forecast-temperature">3º</div>
+            </div>
+          </div>
+
+          <div class="weather-forecast-day">
+            <div class="weather-forecast-date">Wed</div>
+
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+              class="weather-forecast-icon"
+            />
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>15º</strong>
+              </div>
+              <div class="weather-forecast-temperature">8º</div>
+            </div>
+          </div>
+
+          <div class="weather-forecast-day">
+            <div class="weather-forecast-date">Thu</div>
+
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+              class="weather-forecast-icon"
+            />
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>18º</strong>
+              </div>
+              <div class="weather-forecast-temperature">9º</div>
+            </div>
           </div>
         </div>
       </main>
@@ -52,17 +131,17 @@
       <footer>
         This project was coded by
         <a href="https://github.com/Elmari121" target="_blank">
-          Elmari de villiers</a
+          Elmari de Villiers</a
         >, is
         <a href="https://github.com/Elmari121" target="_blank"
           >open-sourced on GitHub</a
         >
         and
-        <a href="https://app.netlify.com/teams/elmari121/sites" target="_blank"
+        <a href="https://weatherappweek7.netlify.app/" target="_blank"
           >hosted on Netlify</a
         >
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
